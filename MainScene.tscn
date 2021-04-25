@@ -1,0 +1,1569 @@
+[gd_scene load_steps=112 format=2]
+
+[ext_resource path="res://graphics/background2.png" type="Texture" id=1]
+[ext_resource path="res://graphics/mermaid1.png" type="Texture" id=2]
+[ext_resource path="res://Mermaid.gd" type="Script" id=3]
+[ext_resource path="res://graphics/lungs.png" type="Texture" id=4]
+[ext_resource path="res://graphics/cliff.png" type="Texture" id=5]
+[ext_resource path="res://Lungs.gd" type="Script" id=6]
+[ext_resource path="res://graphics/lungs_overlay.png" type="Texture" id=7]
+[ext_resource path="res://graphics/sky.png" type="Texture" id=8]
+[ext_resource path="res://graphics/island_underwater.png" type="Texture" id=9]
+[ext_resource path="res://graphics/island_overground.png" type="Texture" id=10]
+[ext_resource path="res://graphics/mermaid_surface.png" type="Texture" id=11]
+[ext_resource path="res://MainScene.gd" type="Script" id=12]
+[ext_resource path="res://graphics/chest.png" type="Texture" id=13]
+[ext_resource path="res://graphics/coral2.png" type="Texture" id=14]
+[ext_resource path="res://pylly_splash.ogg" type="AudioStream" id=15]
+[ext_resource path="res://graphics/coral1.png" type="Texture" id=16]
+[ext_resource path="res://graphics/coral4.png" type="Texture" id=17]
+[ext_resource path="res://graphics/coral5.png" type="Texture" id=18]
+[ext_resource path="res://graphics/coral6.png" type="Texture" id=19]
+[ext_resource path="res://breath.ogg" type="AudioStream" id=20]
+[ext_resource path="res://drown.ogg" type="AudioStream" id=21]
+[ext_resource path="res://graphics/coral7.png" type="Texture" id=25]
+[ext_resource path="res://graphics/speech.png" type="Texture" id=26]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 500, 400 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 25, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 50, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 23, 30 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 75, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 100, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 125, 0, 25, 50 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 150, 0, 25, 50 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "surface",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ) ],
+"loop": false,
+"name": "kick",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 5.38239
+height = 22.8871
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 800, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1000, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2000, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 2300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1900, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1800, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 900, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 100, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 200, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 300, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 400, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 500, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 600, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 700, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 800, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 900, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1000, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1100, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1200, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1300, 100, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "16",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "21",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "14",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "18",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "22",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "10",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ) ],
+"loop": true,
+"name": "20",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": false,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "9",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "12",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "19",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 27 ) ],
+"loop": true,
+"name": "23",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ) ],
+"loop": false,
+"name": "11",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ) ],
+"loop": true,
+"name": "17",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ) ],
+"loop": true,
+"name": "24",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ) ],
+"loop": true,
+"name": "13",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 34 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ) ],
+"loop": true,
+"name": "15",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "drown",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 400, 0, 200, 100 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 800, 0, 200, 100 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 600, 0, 200, 100 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 200, 100 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 200, 0, 200, 100 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 1000, 0, 200, 100 )
+
+[sub_resource type="SpriteFrames" id=82]
+animations = [ {
+"frames": [ SubResource( 84 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 85 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 81 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 80 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 86 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 120, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 150, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 180, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 210, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 240, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 240, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 270, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 300, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 330, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 30, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 60, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 90, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 120, 0, 30, 30 )
+
+[sub_resource type="SpriteFrames" id=66]
+animations = [ {
+"frames": [ SubResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "sparkle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
+"loop": true,
+"name": "break_lock",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 14.634, 11.0718 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 60, 60 )
+
+[sub_resource type="SpriteFrames" id=69]
+animations = [ {
+"frames": [ SubResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 60, 40 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 60, 0, 60, 40 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=73]
+animations = [ {
+"frames": [ SubResource( 70 ), SubResource( 71 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.5
+}, {
+"frames": [ SubResource( 72 ) ],
+"loop": true,
+"name": "static",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 50, 40 )
+
+[sub_resource type="SpriteFrames" id=75]
+animations = [ {
+"frames": [ SubResource( 74 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=77]
+animations = [ {
+"frames": [ SubResource( 76 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=79]
+animations = [ {
+"frames": [ SubResource( 78 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="Backgrounds" type="Node" parent="."]
+
+[node name="Sky" type="Node2D" parent="Backgrounds"]
+z_index = -2
+
+[node name="Sprite" type="Sprite" parent="Backgrounds/Sky"]
+position = Vector2( 1100, -800 )
+texture = ExtResource( 8 )
+
+[node name="Cliff" type="StaticBody2D" parent="Backgrounds"]
+
+[node name="Sprite" type="Sprite" parent="Backgrounds/Cliff"]
+position = Vector2( 1100, 0 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Backgrounds/Cliff"]
+visible = false
+position = Vector2( 450, 50 )
+polygon = PoolVector2Array( -354.765, -513.262, -344.875, -489.028, -322.088, -460.359, -286.803, -439.777, -257.399, -410.373, -240.492, -378.764, -213.294, -350.83, -176.539, -322.162, -149.34, -297.903, -119.937, -271.44, -92.7381, -253.798, -79.5064, -235.42, -58.1887, -220.718, -38.3412, -212.632, -27.3148, -200.136, -11.8778, -186.169, -0.851349, -169.262, 13.1154, -153.09, 28.5524, -139.123, 38.8438, -120.01, 59.1311, -87.3702, 67.8536, -57.8567, 87.0929, -32.6466, 102.062, -2.39542, 119.704, 25.5382, 152.783, 46.1208, 177.318, 66.8669, 201.202, 92.077, 217.472, 129.186, 233.644, 153.445, 288.776, 190.199, 322.59, 224.749, 358.61, 256.358, 388.749, 285.762, 418.152, 314.43, 430.593, 350.117, 440.882, 374.124, 468.318, 412.706, 496.611, 442.714, 555.77, 447.859, 614.929, 447.859, 737.534, 449.573, 866.141, 450.431, 1648.93, 449.573, -360.238, 535.274 )
+
+[node name="Water" type="Node2D" parent="Backgrounds"]
+z_index = -3
+
+[node name="Sprite" type="Sprite" parent="Backgrounds/Water"]
+position = Vector2( 1100, 0 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="IslandUnderwater" type="StaticBody2D" parent="Backgrounds"]
+
+[node name="Sprite" type="Sprite" parent="Backgrounds/IslandUnderwater"]
+position = Vector2( 1100, -465 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Backgrounds/IslandUnderwater"]
+visible = false
+position = Vector2( 1100, -590 )
+polygon = PoolVector2Array( -228.718, -9.49243, 207.88, -10.2471, 207.88, 1.82819, 207.125, 5.60175, 202.597, 12.0167, 192.786, 19.1865, 180.333, 25.9788, 168.635, 32.3938, 156.938, 37.2994, 138.824, 42.5824, 128.259, 43.7144, 117.315, 48.62, 96.9382, 50.8842, 69.7688, 53.1483, 21.4675, 53.5256, -4.1925, 53.903, -12.1169, 58.4312, -26.8337, 58.0538, -75.5123, 58.4312, -94.38, 57.2992, -108.719, 54.2803, -123.436, 47.488, -135.889, 44.0918, -144.568, 44.4691, -152.492, 42.205, -163.058, 39.1862, -172.115, 36.1674, -180.794, 33.1486, -193.247, 27.1108, -200.794, 26.3562, -211.36, 19.5638, -220.416, 10.1299, -227.208, -0.0585938 )
+
+[node name="IslandOverground" type="StaticBody2D" parent="Backgrounds"]
+position = Vector2( 1100, -800 )
+z_index = -1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Backgrounds/IslandOverground"]
+position = Vector2( 0, 100 )
+frames = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Backgrounds/IslandOverground"]
+visible = false
+polygon = PoolVector2Array( -228.765, 198.341, -230.235, 181.434, -217.003, 169.672, -205.242, 163.056, -198.626, 152.03, -182.454, 143.209, -164.812, 139.533, -144.964, 138.063, -120.706, 129.977, -94.2429, 128.507, -42.7865, 127.037, 132.165, 129.977, 171.86, 140.268, 201.264, 165.997, 211.555, 198.341, 201.999, 203.486 )
+
+[node name="Mermaid" type="KinematicBody2D" parent="."]
+position = Vector2( 300, -515 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mermaid"]
+position = Vector2( -0.440125, 0 )
+z_index = 2
+frames = SubResource( 9 )
+animation = "surface"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mermaid"]
+position = Vector2( 0.996506, 3.15558 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DiveCam" type="Camera2D" parent="Mermaid"]
+zoom = Vector2( 0.3, 0.3 )
+limit_left = 100
+limit_top = -500
+limit_right = 2100
+limit_bottom = 500
+limit_smoothed = true
+
+[node name="SwimTimer" type="Timer" parent="Mermaid"]
+wait_time = 0.6
+one_shot = true
+
+[node name="SurfaceCam" type="Camera2D" parent="Mermaid"]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = 100
+limit_bottom = -500
+
+[node name="DiveTimer" type="Timer" parent="Mermaid"]
+one_shot = true
+
+[node name="Splash" type="AudioStreamPlayer" parent="Mermaid"]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="Breath" type="AudioStreamPlayer" parent="Mermaid"]
+stream = ExtResource( 20 )
+volume_db = -10.0
+pitch_scale = 1.15
+
+[node name="Lungs" type="Node2D" parent="Mermaid"]
+position = Vector2( -443.276, 379.192 )
+z_index = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lungs" type="Sprite" parent="Mermaid/Lungs"]
+visible = false
+position = Vector2( 540, -420 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Overlay" type="AnimatedSprite" parent="Mermaid/Lungs"]
+visible = false
+modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( 540, -420 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 50 )
+animation = "0"
+
+[node name="OxygenTimer" type="Timer" parent="Mermaid/Lungs"]
+wait_time = 0.5
+
+[node name="DrownTimer" type="Timer" parent="Mermaid/Lungs"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Drown" type="AudioStreamPlayer" parent="Mermaid/Lungs"]
+stream = ExtResource( 21 )
+
+[node name="SpeechBubble" type="Node2D" parent="Mermaid"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Mermaid/SpeechBubble"]
+position = Vector2( -56.6023, -28.6686 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 82 )
+animation = "0"
+
+[node name="SpeechTimer" type="Timer" parent="Mermaid/SpeechBubble"]
+wait_time = 4.0
+one_shot = true
+
+[node name="SpeechClickTimer" type="Timer" parent="Mermaid/SpeechBubble"]
+wait_time = 0.2
+one_shot = true
+
+[node name="KickTimer" type="Timer" parent="Mermaid"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Treasure" type="Node2D" parent="Items"]
+position = Vector2( 1160, 485 )
+z_index = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Treasure"]
+frames = SubResource( 66 )
+
+[node name="Area2D" type="Area2D" parent="Items/Treasure"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Treasure/Area2D"]
+visible = false
+position = Vector2( 0.332031, 2.65698 )
+shape = SubResource( 67 )
+
+[node name="Corals" type="Node" parent="Items"]
+
+[node name="Coral7" type="Node2D" parent="Items/Corals"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 381.286, -148.395 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 219.727, -276.007 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 273.163, -158.171 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 202.232, -352.024 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 273.55, -316.348 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 359.966, -125.439 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 494.172, -81.3954 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 325.161, -179.991 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 424.741, -114.599 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 383.687, -102.858 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 309.947, -133.74 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 361.628, -79.5383 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 392.51, -49.9165 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 422.762, -21.5552 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Items/Corals/Coral7"]
+position = Vector2( 478.989, -127.851 )
+z_index = 1
+frames = SubResource( 69 )
+
+[node name="Coral1" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral1"]
+position = Vector2( 184.461, -393.073 )
+frames = SubResource( 73 )
+frame = 1
+playing = true
+
+[node name="Coral2" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral2"]
+position = Vector2( 439.799, -145.237 )
+frames = SubResource( 73 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/Coral2"]
+position = Vector2( 513.804, -25.2044 )
+frames = SubResource( 73 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/Coral2"]
+position = Vector2( 379.476, -183.076 )
+frames = SubResource( 73 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/Coral2"]
+position = Vector2( 318.957, -269.138 )
+frames = SubResource( 73 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/Coral2"]
+position = Vector2( 724.312, 204.475 )
+frames = SubResource( 73 )
+playing = true
+
+[node name="Coral3" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral3"]
+position = Vector2( 121.726, -426.297 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="Coral4" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral4"]
+position = Vector2( 244.943, -364.903 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="Coral6" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral6"]
+position = Vector2( 244.889, -301.58 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="Coral5" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 208.477, -319.867 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite26" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 167.511, -322.388 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite27" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 190.83, -296.548 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 243.46, -256.959 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 312.318, -224.951 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 154.803, -352.619 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 284.36, -239.007 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 366.781, -228.917 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 263.174, -326.25 )
+z_index = -1
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 350.696, -208.55 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 415.612, -209.18 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 460.359, -175.146 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 249.855, -219.894 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 154.944, -409.892 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 267.845, -180.621 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 152.409, -377.23 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 534.659, 9.3848 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 508.338, 47.5769 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite28" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 493.212, 79.0894 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite29" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 517.792, 107.451 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite30" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 554.346, 118.795 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite31" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 577.035, 147.787 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 538.525, -53.2893 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 487.677, -50.0303 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 446.714, -40.3746 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 718.793, 236.635 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 556.397, 36.8966 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 124.907, -401.549 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 324.572, -155.879 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 417.417, -68.5992 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Items/Corals/Coral5"]
+position = Vector2( 205.529, -372.787 )
+frames = SubResource( 73 )
+animation = "static"
+playing = true
+
+[node name="CoralGreen" type="Node2D" parent="Items/Corals"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 773.261, 335.479 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 819.389, 325.273 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 788.273, 423.413 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 883.447, 348.697 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 824.577, 472.129 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 827.85, 284.382 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 679.412, 215.986 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 899.412, 405.315 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 481.089, 13.2784 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 629.33, 116.721 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 796.198, 385.209 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 766.826, 293.326 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 710.734, 290.175 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 740.986, 367.066 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 746.028, 396.688 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 746.028, 396.688 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 773.759, 445.217 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 775.02, 468.536 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 732.162, 413.705 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 766.422, 248.286 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 843.617, 386.066 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 902.95, 471.084 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 845.095, 435.438 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 894.56, 449.519 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="Items/Corals/CoralGreen"]
+position = Vector2( 948.272, 473.945 )
+z_index = 1
+frames = SubResource( 75 )
+
+[node name="CoralSmallGreen" type="Node2D" parent="Items/Corals"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 579.36, 58.5212 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 548.149, 72.6638 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 582.774, 110.703 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 709.082, 180.928 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 680.797, 185.317 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 660.802, 176.051 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 627.64, 170.687 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite30" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 605.581, 170.057 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite31" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 620.077, 195.267 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 682.747, 150.204 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 666.166, 123.87 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 653.974, 96.56 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 630.566, 77.5406 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 596.428, 92.1709 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 615.935, 149.717 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 660.314, 149.229 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 545.71, 92.6585 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 603.158, 135.086 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 683.182, 244.814 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite32" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 689.666, 256.702 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite33" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 640.493, 226.441 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite34" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 659.947, 242.112 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite35" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 669.133, 258.323 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite36" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 680.48, 276.695 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 731.027, 263.833 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 707.619, 250.666 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 642.27, 205.8 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 649.585, 156.544 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 572.678, 78.2478 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 525.423, 25.8957 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 574.004, 7.8455 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 584.701, 34.0239 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite26" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 520.79, 68.0553 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite27" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 478.167, 32.8451 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite37" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 443.043, 9.06914 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite38" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 451.689, 39.8698 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite28" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 506.428, -4.21836 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="AnimatedSprite29" type="AnimatedSprite" parent="Items/Corals/CoralSmallGreen"]
+position = Vector2( 557.39, -11.6311 )
+z_index = 1
+frames = SubResource( 77 )
+
+[node name="CoralSmallPurple" type="Node2D" parent="Items/Corals"]
+z_index = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 417.683, -170.153 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 645.326, 186.386 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 449.786, -82.1317 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 792.049, 269.21 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 743.903, 312.606 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 864.149, 405.649 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 863.033, 468.509 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 1018.56, 481.663 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 1075.05, 486.306 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 1548.42, 486.028 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 79 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Items/Corals/CoralSmallPurple"]
+position = Vector2( 2023.71, 487.853 )
+frames = SubResource( 79 )
+
+[node name="CoralSmall" type="Node2D" parent="Items/Corals"]
+position = Vector2( 207.467, 73.9598 )
+
+[node name="FishSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="WinTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Mermaid/SwimTimer" to="Mermaid" method="_on_SwimTimer_timeout"]
+[connection signal="timeout" from="Mermaid/DiveTimer" to="Mermaid" method="_on_DiveTimer_timeout"]
+[connection signal="timeout" from="Mermaid/Lungs/OxygenTimer" to="Mermaid/Lungs" method="_on_OxygenTimer_timeout"]
+[connection signal="timeout" from="Mermaid/Lungs/DrownTimer" to="Mermaid" method="_on_DrownTimer_timeout"]
+[connection signal="timeout" from="Mermaid/SpeechBubble/SpeechTimer" to="Mermaid" method="_on_SpeechTimer_timeout"]
+[connection signal="timeout" from="Mermaid/SpeechBubble/SpeechClickTimer" to="Mermaid" method="_on_SpeechClickTimer_timeout"]
+[connection signal="timeout" from="Mermaid/KickTimer" to="Mermaid" method="_on_KickTimer_timeout"]
+[connection signal="body_entered" from="Items/Treasure/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="FishSpawnTimer" to="." method="_on_FishSpawnTimer_timeout"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]

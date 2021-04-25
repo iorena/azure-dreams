@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://graphics/chest.png" type="Texture" id=1]
+[ext_resource path="res://WinMenu.gd" type="Script" id=2]
+[ext_resource path="res://coins.ogg" type="AudioStream" id=3]
+[ext_resource path="res://graphics/coin.png" type="Texture" id=4]
+[ext_resource path="res://graphics/sky.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 270, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 30, 30 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 330, 0, 30, 30 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve" id=6]
+max_value = 2.0
+_data = [ Vector2( 0.0229885, 1.25455 ), 0.0, -2.15702, 0, 0, Vector2( 0.45977, 0.927273 ), 0.0, 0.0, 0, 0, Vector2( 0.971264, 1.32727 ), 1.20963, 0.0, 0, 0 ]
+
+[node name="WinMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 494.075, 433.284 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.496
+anchor_top = 0.453
+anchor_right = 0.496
+anchor_bottom = 0.453
+margin_left = -83.0601
+margin_top = 35.5287
+margin_right = 86.9399
+margin_bottom = 149.529
+text = "You found the treasure!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 461.743
+margin_top = 545.334
+margin_right = 536.743
+margin_bottom = 565.334
+text = "Play again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 496.64, 396.992 )
+amount = 16
+lifetime = 1.5
+speed_scale = 3.0
+lifetime_randomness = 0.05
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 80.0
+direction = Vector2( 1, 0.5 )
+gravity = Vector2( 0, 60 )
+linear_accel = 1.0
+linear_accel_random = 0.47
+radial_accel = 1.0
+angle = 720.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 6 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 201.054, 321.054 )
+z_index = -1
+texture = ExtResource( 5 )
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
